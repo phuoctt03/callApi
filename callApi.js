@@ -1,13 +1,25 @@
-const axios = require('axios');
+const https = require('https');
 
-const callApi = async () => {
-  try {
-    const response = await axios.get('https://symfony-9z0y.onrender.com/activities/bulk');
-    console.log('Response:', response.data);
-  } catch (error) {
-    console.error('Error:', error.message);
-  }
+const options = {
+  hostname: 'https://symfony-9z0y.onrender.com', // Thay bằng hostname của API
+  path: '/activities/bulk',              // Thay bằng đường dẫn API
+  method: 'GET',
 };
 
-// Gọi hàm
-callApi();
+const req = https.request(options, (res) => {
+  let data = '';
+  
+  res.on('data', (chunk) => {
+    data += chunk;
+  });
+
+  res.on('end', () => {
+    console.log('Response:', data);
+  });
+});
+
+req.on('error', (e) => {
+  console.error('Error:', e.message);
+});
+
+req.end();
