@@ -1,7 +1,6 @@
 name: Call API Every 10 Minutes
 
 on:
-  push:
   schedule:
     # Lặp lại mỗi 10 phút
     - cron: '*/10 * * * *'
