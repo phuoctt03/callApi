@@ -1,4 +1,4 @@
-name: Wake Up Render Server Every 10 Minutes
+name: Wake Up Render Server Every 5 Minutes
 
 on:
   schedule:
