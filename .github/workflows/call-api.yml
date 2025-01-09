@@ -22,7 +22,7 @@ jobs:
 
       # Bước 3: Cài đặt dependencies
       - name: Install dependencies
-        run: npm install
+        run: npm install axios
 
       # Bước 4: Chạy script
       - name: Run script
