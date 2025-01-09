@@ -2,8 +2,12 @@ name: Wake Up Render Server Every 10 Minutes
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
-
+    - cron: '0 * * * *'
+    - cron: '10 * * * *'
+    - cron: '20 * * * *'
+    - cron: '30 * * * *'
+    - cron: '40 * * * *'
+    - cron: '50 * * * *'
 jobs:
   call-api:
     runs-on: ubuntu-latest
