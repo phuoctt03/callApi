@@ -1,8 +1,7 @@
 name: Wake Up Render Server Every Minutes
 
 on:
-  schedule:
-    - cron: '*/1 * * * *'
+  push:
     
 jobs:
   call-api:
