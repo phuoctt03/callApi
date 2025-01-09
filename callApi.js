@@ -1,7 +1,7 @@
 const https = require('https');
 
 const options = {
-  hostname: 'https://symfony-9z0y.onrender.com', // Thay bằng hostname của API
+  hostname: 'symfony-9z0y.onrender.com', // Thay bằng hostname của API
   path: '/activities/bulk',              // Thay bằng đường dẫn API
   method: 'GET',
 };
