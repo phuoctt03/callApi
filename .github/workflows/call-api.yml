@@ -1,0 +1,28 @@
+name: Call API Every 10 Minutes
+
+on:
+  schedule:
+    # Lặp lại mỗi 10 phút
+    - cron: '*/10 * * * *'
+
+jobs:
+  call-api:
+    runs-on: ubuntu-latest
+    steps:
+      # Bước 1: Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Bước 2: Cài đặt Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # Bước 3: Cài đặt dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Bước 4: Chạy script
+      - name: Run script
+        run: node callApi.js
